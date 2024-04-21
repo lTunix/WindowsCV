@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Windows CV - Marcos Fernández</title>
+</head>
+<body>
+    <div>
+        <section id="desktop" class="desktop" onmousedown="startDragging(event)" onmousemove="drag(event)" onmouseup="stopDragging(event)">
+            <div class="icons" id="icons">
+                <div class="icon-desktop">
+                    <img src="assets/icons/explorer-pc.png" alt="" srcset="">
+                    <div>Este equipo</div>
+                </div>   
+                <div class="icon-desktop" id="gba">
+                    <img src="assets/icons/gameboy.png" alt="" srcset="">
+                    <div>GBA Emulator</div>
+                </div>                  
+            </div>
+            <div class="window" id="window">
+                <div class="border-window" id="border-window">
+                    <div class="window-controls" id="window-controls">
+                        <div>
+                            <img src="assets/icons/minimize.png" alt="">
+                        </div>
+                        <div id="maximize-window">
+                            <img src="assets/icons/maximize.png" alt="">
+                        </div>
+                        <div id="close-window">
+                            <img src="assets/icons/close.png" alt="">                            
+                        </div>     
+                    </div>
+                </div>
+                <iframe src="explorer.html"></iframe>
+            </div>
+            <div class="copyright">
+                <div>
+                    Windows CV - Versión 1.0 <br>
+                    Creado por Marcos Fernández                    
+                </div>
+                <a target="_blank" href="https://ltunix.github.io/">Click acá para ir al CV Online de Marcos</a>
+            </div>
+        </section>
+        <section class="menu-bar" id="menu-bar">
+            <div class="widgets">
+                <div id="weather" class="weather">
+                    <img src="assets/icons/weather.png" alt="" srcset="">
+                    <div>
+                        <div class="temperature">16°C</div>
+                        <div class="status-weather">Lluvia</div>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div id="window-button" class="window-button">
+                    <img src="assets/icons/windows.png" alt="" srcset="">
+                </div>
+                <div id="search-button" class="search-button">
+                    <img src="assets/icons/search.svg" alt="" srcset="">
+                </div>
+                <div id="explorer-folder" class="explorer-folder">
+                    <img src="assets/icons/explorer.png" alt="">
+                    <div class="open-window-point" id="open-window-point"></div>
+                </div>
+            </div>
+            <div class="information">
+                <div id="arrow" class="arrow">
+                    <img src="assets/icons/arrow.png" alt="" srcset="">
+                </div>
+                <div id="wifi" class="wifi">
+                    <img src="assets/icons/wifi.png" alt="" srcset="">
+                </div>
+                <div id="sound" class="sound">
+                    <img src="assets/icons/sound.png" alt="">
+                </div>
+                <div id="energy" class="energy">
+                    <img src="assets/icons/battery.png" alt="">
+                </div>
+                <div id="calendar" class="calendar">
+                    <div class="hour" id="hour">23:04</div>
+                    <div class="date" id="date">19-04-2024</div>
+                </div>
+                <div id="notifications" class="notifications">
+                    <img src="assets/icons/notification.png" alt="">
+                </div>
+            </div>            
+        </section>        
+    </div>    
+</body>
+<script src="script.js"></script>
+</html>

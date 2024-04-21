@@ -1,0 +1,384 @@
+/*RESET CSS*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*END RESET CSS*/
+
+/*GENERAL*/
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*END GENERAL*/
+
+/*BREADCRUM*/
+
+.breadcrum {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282828;
+    height: 55px;
+}
+
+.explorer-controls {
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 20px;
+    width: 200px;
+}
+
+.explorer-controls div {
+    width: 200px;
+}
+
+.explorer-controls img {
+    filter: invert();
+    width: 18px;
+    height: auto;
+}
+
+.explorer-reload img {
+    width: 15px;
+    transform: rotate(90deg);
+    margin-top: 2px;
+}
+
+.explorer-back img {
+    transform: rotate(180deg);
+}
+
+.explorer-up img {
+    transform: rotate(-90deg);
+}
+
+.explorer-path {
+    flex: 1;
+    position: relative;
+}
+
+.explorer-path input {
+    width: 95%;
+    height: 30px;
+    position: relative;
+    padding-top: 5px;
+    background: url(assets/icons/explorer-home-2.png) no-repeat scroll 5px 8px;
+    background-size: 18px;
+    filter: invert();
+    border: none;
+    background-color: #c4c4c4;
+    text-indent: 30px;
+    word-spacing: 20px;
+    border-radius: 5px;
+}
+
+.explorer-path {
+    box-sizing: border-box;
+}
+
+.explorer-search {
+    position: relative;
+    left: -10px;
+    width: 25%;
+}
+
+.explorer-search input {
+    width: 100%;
+    height: 30px;
+    padding-top: 5px;
+    border: none;
+    color: white;
+    background-color: #3b3b3b;
+    text-indent: 10px;
+    border-radius: 5px;
+}
+
+.explorer-search-icon {
+    position: absolute;
+    top: 12px;
+    right: 5px;
+    width: 13px !important;
+    height: 13px;
+    background: url(assets/icons/search.svg) no-repeat;
+    background-size: cover;
+    transform: rotate(-90deg);
+}
+
+/*END BREADCRUM*/
+
+/*EXPLORER DETAILS*/
+
+.explorer-details {
+    display: flex;
+    color: white;
+    flex: 1;
+    font-size: 13px;
+}
+
+/*END EXPLORER DETAILS*/
+
+/*FAST ACCESS*/
+
+.fast-access {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: solid 1px gray;
+}
+
+.item-access {
+    position: relative;
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+}
+
+.explorer-separator {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.26);
+}
+
+.item-access:nth-child(3) {
+    margin-top: 40px;
+}
+
+.item-access:first-child {
+    margin-top: 15px;
+    background-color: rgba(128, 128, 128, 0.285);
+}
+
+/*ESTE EQUIPO*/
+.item-access:nth-child(11) {
+    padding-left: 10px;
+}
+
+.item-access:nth-child(11) img:first-child {
+    width: 10px;
+    height: 10px;
+    filter: invert();
+    transform: rotate(180deg);
+    margin-right: 5px;
+}
+
+.item-access:last-child {
+    padding-left: 20px;
+}
+
+.item-access:last-child img:first-child {
+    width: 10px;
+    height: 10px;
+    filter: invert();
+    transform: rotate(90deg);
+    margin-right: 5px;
+}
+
+.item-access img {
+    width: 15px;
+    padding-right: 4px;
+}
+
+.fast-access-pin {
+    position: absolute;
+    filter: invert(70%);
+    transform: rotate(90deg);
+    right: 0;
+}
+
+/*END FAST ACCESS*/
+
+/*EXPLORER CONTENT*/
+
+.explorer-content {
+    width: 100%;
+}
+
+.explorer-content-title {
+    display: flex;
+    width: 100%;
+    padding: 30px 0px 0px 30px;
+    box-sizing: border-box;
+}
+
+.explorer-content-title img {
+    width: 13px;
+    filter: invert();
+    transform: rotate(180deg);
+    margin-right: 15px;
+}
+
+.explorer-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.explorer-icons div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+.explorer-icons div:active {
+    background-color: rgba(0, 255, 255, 0.218);
+}
+
+.explorer-icons div:focus {
+    background-color: rgba(0, 255, 255, 0.218);
+}
+
+.fav-message {
+    color: gray;
+    padding-left: 59px;
+    margin-top: 10px;
+}
