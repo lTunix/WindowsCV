@@ -1,9 +1,9 @@
 //SYSTEM TIME
 const date = new Date();
 
-setInterval(() => {    
+setInterval(() => {
     let date = new Date();
-    
+
     let hour = (date.getHours());
     let minutes = ('0' + date.getMinutes()).slice(-2);
     let day = ('0' + date.getDate()).slice(-2);
@@ -18,23 +18,57 @@ setInterval(() => {
 
 setInterval(() => {
     windowqty = document.getElementsByClassName("window").length
-    if(windowqty > 0){
+    if (windowqty > 0) {
         document.getElementById("open-window-point").style.transform = "scale(1)"
         setTimeout(() => {
             document.getElementById("open-window-point").style.display = "block"
-        }, 100);        
-    }else{
+        }, 100);
+    } else {
         document.getElementById("open-window-point").style.transform = "scale(0)"
         setTimeout(() => {
             document.getElementById("open-window-point").style.display = "none"
-        }, 100);        
+        }, 100);
     }
 }, 100);
+
+//START MENU
+
+var windowButton = document.getElementById("window-button");
+var startMenu = document.getElementById("start-menu");
+var deploy = false;
+
+document.addEventListener("click", function (e) {
+    console.log(e.target)
+    if((e.target.id != "window-button" && e.target.id != "img-window-button") && deploy){
+        deploy = !deploy;
+        startMenu.classList.add("start-menu-retract");
+        startMenu.addEventListener("animationend", function() {
+            startMenu.classList.add("start-menu-hide");
+            startMenu.classList.remove("start-menu-deploy", "start-menu-visible");
+        }, { once: true });
+    }
+});
+
+windowButton.addEventListener("click", function () {
+    deploy = !deploy;
+    if (deploy) {
+        startMenu.classList.remove("start-menu-retract", "start-menu-hide");
+        startMenu.classList.add("start-menu-deploy", "start-menu-visible");
+    } else {        
+        startMenu.classList.add("start-menu-retract");
+        startMenu.addEventListener("animationend", function() {
+            startMenu.classList.add("start-menu-hide");
+            startMenu.classList.remove("start-menu-deploy", "start-menu-visible");
+        }, { once: true });
+    }
+});
+
+// END START MENU
 
 
 //CLOSE WINDOW
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (event.target.closest('.window-controls') && event.target.closest('#close-window')) {
         let windowElement = event.target.closest('.window');
         windowElement.style.opacity = "0";
@@ -49,7 +83,7 @@ document.addEventListener('click', function(event) {
 
 //MAXIMIZE MMINIMIZE WINDOW
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (event.target.closest('.window-controls') && event.target.closest('#maximize-window')) {
         let windowElement = event.target.closest('.window');
         if (!windowElement.classList.contains('maximized')) {
@@ -90,7 +124,7 @@ function drag(e) {
         let y = e.clientY - offsetY;
         e.target.parentElement.parentElement.style.left = x + 'px';
         e.target.parentElement.parentElement.style.top = y + 'px';
-        e.target.parentElement.parentElement.style.zIndex  = zIndexWindow;
+        e.target.parentElement.parentElement.style.zIndex = zIndexWindow;
         document.getElementById("menu-bar").style.zIndex = zIndexWindow + 1;
     }
 }
@@ -140,7 +174,7 @@ openGba.addEventListener('click', function () {
     var iframe = document.createElement('iframe');
     iframe.src = 'assets/gba.js.org/index.html';
 
-    borderWindow.appendChild(windowControls);    
+    borderWindow.appendChild(windowControls);
 
     newWindow.appendChild(borderWindow);
     newWindow.appendChild(iframe);
@@ -187,7 +221,7 @@ openWindow.addEventListener('click', function () {
     var iframe = document.createElement('iframe');
     iframe.src = 'explorer.html';
 
-    borderWindow.appendChild(windowControls);    
+    borderWindow.appendChild(windowControls);
 
     newWindow.appendChild(borderWindow);
     newWindow.appendChild(iframe);

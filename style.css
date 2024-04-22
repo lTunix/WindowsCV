@@ -231,6 +231,197 @@ body {
 
 /*END WIDGETS*/
 
+/*START MENU*/
+
+.start-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute !important;
+    top: -705px;
+    width: 630px;
+    height: 700px;
+    background-color: #252525d9;
+    border-radius: 5px 5px;
+    border: 1px solid gray;
+    backdrop-filter: blur(30px);
+}
+
+.start-menu-search {
+    position: relative;
+    width: 100%;
+    padding: 40px 50px;
+    box-sizing: border-box;
+}
+
+.start-menu-search input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 40px;
+    border-radius: 20px 20px;
+    height: 30px;
+    background-color: #242424;
+    border: none;
+    color: gray;
+}
+
+
+.start-menu-search-icon {
+    position: absolute;
+    top: 48px;
+    left: 65px;
+    width: 13px !important;
+    height: 13px;
+    background: url(assets/icons/search.svg) no-repeat;
+    background-size: cover;
+    transform: rotate(-90deg);
+}
+
+.start-menu-buttons {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 70px 0 70px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.start-menu-buttons div:last-child {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    font-size: 12px;
+    background-color: #474747;
+    padding: 7px;
+    border-radius: 5px 5px;
+}
+
+.start-menu-buttons div:last-child img {
+    filter: invert();
+    width: 10px;
+    margin-left: 10px;
+    transform: rotate(90deg);
+}
+
+.start-menu-apps {
+    padding: 0 70px 0 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    grid-gap: 5px;
+    box-sizing: border-box;
+    margin-bottom: 130px;
+    text-align: center;
+}
+
+.start-menu-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 13px;
+    height: 66px;
+    transition: 0.3s;
+}
+
+.start-menu-icon:hover {
+    background-color: #3e3e3e;
+}
+
+.start-menu-recomendations {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 70px 0 70px;
+    box-sizing: border-box;
+}
+
+.start-menu-recomendations div:first-child  {
+    font-weight: 500;
+}
+
+.start-menu-recomendations div:last-child  {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgb(162, 162, 162);
+}
+
+.start-menu-power {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: end;
+}
+
+.start-menu-power-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 70px 20px 70px;
+    background-color: #252525;
+}
+
+.start-menu-power-user {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    font-size: 12px;
+}
+
+.start-menu-power-user img {
+    margin-right: 10px;
+    border-radius: 50% 50%;
+}
+
+.start-menu-power-controls img {
+    filter: invert();
+    width: 23px !important;
+}
+
+.start-menu-deploy {
+    animation: despliegueDesdeAbajo 0.2s ease-out;
+}
+
+.start-menu-retract {
+    animation: repliegueHaciaAbajo 0.1s ease-out;
+}
+
+.start-menu-hide {
+    display: none;
+}
+
+.start-menu-visible {
+    display: flex;
+}
+
+@keyframes despliegueDesdeAbajo {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+        
+    }
+}
+
+@keyframes repliegueHaciaAbajo {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+
+/*END START MENU*/
+
 /*BUTTONS*/
 
 .buttons {
@@ -240,22 +431,28 @@ body {
     align-content: center;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;    
+    box-sizing: border-box;
     height: 100%;
 }
 
-.buttons div {
+.buttons .window-button,
+.buttons .search-button,
+.buttons .explorer-folder {
     position: relative;
     transition: 0.3s;
     padding-left: 8px;
     padding-right: 8px;
 }
 
-.buttons div:hover {
+.buttons .window-button:hover,
+.buttons .search-button:hover,
+.buttons .explorer-folder:hover {
     background-color: rgba(128, 128, 128, 0.284);
 }
 
-.buttons div:active {
+.buttons .window-button:active,
+.buttons .search-button:active,
+.buttons .explorer-folder:active {
     transform: scale(0.8);
 }
 
@@ -388,7 +585,8 @@ body {
     padding-bottom: 50px;
 }
 
-.copyright a{
+.copyright a {
     color: white;
 }
+
 /*END COPYRIGHT*/
