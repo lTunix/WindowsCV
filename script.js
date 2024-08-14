@@ -39,10 +39,10 @@ var deploy = false;
 
 document.addEventListener("click", function (e) {
     console.log(e.target)
-    if((e.target.id != "window-button" && e.target.id != "img-window-button") && deploy){
+    if ((e.target.id != "window-button" && e.target.id != "img-window-button") && deploy) {
         deploy = !deploy;
         startMenu.classList.add("start-menu-retract");
-        startMenu.addEventListener("animationend", function() {
+        startMenu.addEventListener("animationend", function () {
             startMenu.classList.add("start-menu-hide");
             startMenu.classList.remove("start-menu-deploy", "start-menu-visible");
         }, { once: true });
@@ -54,9 +54,9 @@ windowButton.addEventListener("click", function () {
     if (deploy) {
         startMenu.classList.remove("start-menu-retract", "start-menu-hide");
         startMenu.classList.add("start-menu-deploy", "start-menu-visible");
-    } else {        
+    } else {
         startMenu.classList.add("start-menu-retract");
-        startMenu.addEventListener("animationend", function() {
+        startMenu.addEventListener("animationend", function () {
             startMenu.classList.add("start-menu-hide");
             startMenu.classList.remove("start-menu-deploy", "start-menu-visible");
         }, { once: true });
@@ -140,7 +140,9 @@ function stopDragging(e) {
 
 let openWindow = document.getElementById('explorer-folder');
 let openGba = document.getElementById('gba');
+let openTerminal = document.getElementById('terminal');
 
+//GBA WINDOW
 openGba.addEventListener('click', function () {
     var newWindow = document.createElement('div');
     newWindow.classList.add('window');
@@ -188,6 +190,7 @@ openGba.addEventListener('click', function () {
     }, 100);
 });
 
+//EXPLORER WINDOW
 openWindow.addEventListener('click', function () {
     var newWindow = document.createElement('div');
     newWindow.classList.add('window');
@@ -220,6 +223,60 @@ openWindow.addEventListener('click', function () {
 
     var iframe = document.createElement('iframe');
     iframe.src = 'explorer.html';
+
+    borderWindow.appendChild(windowControls);
+
+    newWindow.appendChild(borderWindow);
+    newWindow.appendChild(iframe);
+
+    var desktop = document.getElementById('desktop');
+
+    desktop.appendChild(newWindow);
+    setTimeout(() => {
+        newWindow.style.opacity = "";
+        newWindow.style.transform = "";
+    }, 100);
+});
+
+
+//TERMINAL WINDOW
+openTerminal.addEventListener('click', function () {
+    var newWindow = document.createElement('div');
+    newWindow.classList.add('window');
+    newWindow.id = 'window';
+    newWindow.style.opacity = "0";
+    newWindow.style.transform = "scale(0.9)";
+
+    var borderWindow = document.createElement('div');
+    borderWindow.classList.add('border-window');
+    borderWindow.id = 'border-window';
+
+    var windowControls = document.createElement('div');
+    windowControls.classList.add('window-controls');
+    windowControls.id = 'window-controls';
+
+    var tab = document.createElement('div');
+    tab.id = 'tab-icon';
+    tab.innerHTML = '<img src="assets/icons/powershell.png" alt=""><span>Windows PowerShell</span>';
+
+    var minimizeButton = document.createElement('div');
+    minimizeButton.innerHTML = '<img src="assets/icons/minimize.png" alt="">';
+
+    var maximizeButton = document.createElement('div');
+    maximizeButton.id = 'maximize-window';
+    maximizeButton.innerHTML = '<img src="assets/icons/maximize.png" alt="">';
+
+    var closeButton = document.createElement('div');
+    closeButton.id = 'close-window';
+    closeButton.innerHTML = '<img src="assets/icons/close.png" alt="">';
+
+    windowControls.appendChild(tab);
+    windowControls.appendChild(minimizeButton);
+    windowControls.appendChild(maximizeButton);
+    windowControls.appendChild(closeButton);
+
+    var iframe = document.createElement('iframe');
+    iframe.src = 'terminal.html';
 
     borderWindow.appendChild(windowControls);
 

@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Windows CV - Marcos Fernández</title>
 </head>
-<body>
+
+<body oncontextmenu="showContextMenu(event)">
     <div>
-        <section id="desktop" class="desktop" onmousedown="startDragging(event)" onmousemove="drag(event)" onmouseup="stopDragging(event)">
+        <section id="desktop" class="desktop" onmousedown="startDragging(event)" onmousemove="drag(event)"
+            onmouseup="stopDragging(event)">
             <div class="icons" id="icons">
                 <div class="icon-desktop">
                     <img src="assets/icons/explorer-pc.png" alt="" srcset="">
                     <div>Este equipo</div>
-                </div>   
+                </div>
                 <div class="icon-desktop" id="gba">
                     <img src="assets/icons/gameboy.png" alt="" srcset="">
                     <div>GBA Emulator</div>
-                </div>                  
+                </div>
             </div>
             <div class="window" id="window">
                 <div class="border-window" id="border-window">
@@ -29,8 +32,8 @@
                             <img src="assets/icons/maximize.png" alt="">
                         </div>
                         <div id="close-window">
-                            <img src="assets/icons/close.png" alt="">                            
-                        </div>     
+                            <img src="assets/icons/close.png" alt="">
+                        </div>
                     </div>
                 </div>
                 <iframe src="explorer.html"></iframe>
@@ -38,11 +41,11 @@
             <div class="copyright">
                 <div>
                     Windows CV - Versión 1.0 <br>
-                    Creado por Marcos Fernández                    
+                    Creado por Marcos Fernández
                 </div>
                 <a target="_blank" href="https://ltunix.github.io/">Click acá para ir al CV Online de Marcos</a>
             </div>
-        </section>        
+        </section>
         <section class="menu-bar" id="menu-bar">
             <div class="widgets">
                 <div id="weather" class="weather">
@@ -52,12 +55,12 @@
                         <div class="status-weather">Lluvia</div>
                     </div>
                 </div>
-            </div>            
-            <div class="buttons">  
+            </div>
+            <div class="buttons">
                 <div class="start-menu" id="start-menu">
                     <div class="start-menu-search">
                         <div class="start-menu-search-icon"></div>
-                        <input type="text" value="Buscar aplicaciones, configuraciones y documentos">                        
+                        <input type="text" value="Buscar aplicaciones, configuraciones y documentos">
                     </div>
                     <div class="start-menu-buttons">
                         <div>Anclado</div>
@@ -70,7 +73,7 @@
                         <div class="start-menu-icon" id="gba">
                             <img src="assets/icons/gameboy.png" alt="" srcset="">
                             <div>GBA Emulator</div>
-                        </div>    
+                        </div>
                     </div>
                     <div class="start-menu-recomendations">
                         <div>Recomendaciones</div>
@@ -87,9 +90,9 @@
                             <div class="start-menu-power-controls">
                                 <img src="assets/icons/apagar.png" alt="">
                             </div>
-                        </div>                        
+                        </div>
                     </div>
-                </div>              
+                </div>
                 <div id="window-button" class="window-button">
                     <img id="img-window-button" src="assets/icons/windows.png" alt="" srcset="">
                 </div>
@@ -121,9 +124,51 @@
                 <div id="notifications" class="notifications">
                     <img src="assets/icons/notification.png" alt="">
                 </div>
-            </div>            
-        </section>        
-    </div>    
+            </div>
+        </section>
+        <div id="contextMenu" class="context-menu">
+            <ul>
+                <li>
+                    <img src="" alt="">
+                    Ver
+                </li>
+                <li>
+                    <img src="" alt="">
+                    Ordenar por
+                </li>
+                <li>
+                    <img class="reload-context" src="assets/icons/arrow-reload.png" alt="">
+                    Actualizar
+                </li>
+                <hr>
+                <li>
+                    <img src="" alt="">
+                    Nuevo
+                </li>
+                <hr>
+                <li>
+                    <img src="" alt="">
+                    Configuración de pantalla
+                </li>
+                <li>
+                    <img src="" alt="">
+                    Personalizar
+                </li>
+                <hr>
+                <li id="terminal">
+                    <img src="assets/icons/terminal.png" alt="">
+                    Abrir en terminal
+                </li>
+                <hr>
+                <li>
+                    <img src="" alt="">
+                    Mostrar Más opciones
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
+<script src="contextMenu.js"></script>
+
 </html>

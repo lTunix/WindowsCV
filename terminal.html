@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleTerminal.css" />
+    <title>Terminal</title>
+</head>
+
+<body>
+    <div class="terminal-content">
+        <p>Windows PowerShell</p>
+        <p>Copyright (C) Microsoft Corporation. Todos los derechos reservados.</p>
+        <br />
+        <p style="display: inline">PS C:\Users\marco></p>
+        <input type="text" id="terminalInput" style="display: inline" />
+    </div>
+    <script>
+        window.onload = function() {
+            document.getElementById('terminalInput').focus();
+        };
+
+        window.onclick = function() {
+            document.getElementById('terminalInput').focus();
+        };
+    </script>
+</body>
+
+</html>
